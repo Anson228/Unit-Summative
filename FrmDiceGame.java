@@ -5,9 +5,12 @@
  */
 public class FrmDiceGame extends javax.swing.JFrame {
 
-    /**
-     * Creates new form FrmDiceGame
-     */
+    int totalRolls = 0;
+        int totalCorrect = 0;
+        int totalIncorrect = 0;
+        int userGuess;
+        int diceRoll;
+        double percCorrect ;
     public FrmDiceGame() {
         initComponents();
     }
@@ -191,12 +194,7 @@ public class FrmDiceGame extends javax.swing.JFrame {
     }//GEN-LAST:event_txtUserGuessActionPerformed
 
     private void btnRollDiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRollDiceActionPerformed
-        double totalRolls = 0;
-        int totalCorrect = 0;
-        int totalIncorrect = 0;
-        int userGuess;
-        int diceRoll;
-        double percCorrect = 0;
+        
         
         diceRoll = (int)Math.round(Math.random()*5+1);
         lblRollValue.setText(String.valueOf(diceRoll));
@@ -219,8 +217,6 @@ public class FrmDiceGame extends javax.swing.JFrame {
         percCorrect = percCorrect * 100;
         percCorrect = Math.round(percCorrect);
         percCorrect = percCorrect / 100;
-        
-        percCorrect = ((double)totalCorrect/(double)totalRolls)*100;
         
         lblRollsValue.setText(String.valueOf(totalRolls));
         lblCorrectValue.setText(String.valueOf(totalCorrect));
